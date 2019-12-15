@@ -15,7 +15,7 @@ ins_sort3 :: Ord a => [a] -> [a]
 ins_sort3 = foldl (flip insert) []
  
 
---Quick Sort
+--Quick Sort, best case: O(n(log n)) / worth case: O(n^2) 
 quick_sort :: Ord a => [a] -> [a]
 quick_sort (x:xs) = quick_sort smaller xs ++ [x] ++ quick_sort larger xs
                 where smaller = [a | a <- xs, a <= x]
