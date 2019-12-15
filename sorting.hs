@@ -1,4 +1,4 @@
---Insertion Sort, run in O(n^2)
+--Insertion Sort, runs in O(n^2)
 insert :: Ord a => a -> [a] -> [a]
 insert x [] = [x]
 insert x (y:ys) = if x <= y then x:y:ys else insert x ys
@@ -22,7 +22,7 @@ quick_sort (x:xs) = quick_sort smaller xs ++ [x] ++ quick_sort larger xs
                       larger  = [b | b <- xs, b > x]
 
 
---Merge Sort
+--Merge Sort, runs in O(n(log n))
 merge :: Ord a => [a] -> [a]
 merge xs [] = xs
 merge [] ys = ys
